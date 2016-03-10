@@ -1,0 +1,2 @@
+# PJN
+Przetwarzanie Języka Naturalnego
