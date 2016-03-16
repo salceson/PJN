@@ -2,6 +2,7 @@
 import sys
 from collections import Counter
 from math import sqrt, fsum
+from pprint import pprint
 
 from n_grams import n_grams_from_data
 
@@ -53,13 +54,14 @@ def cosine_metric(stat1, stat2):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: %s input_file metric n" % sys.argv[0])
+    if len(sys.argv) != 4 and len(sys.argv) != 5:
+        print("Usage: %s input_file metric n [show]" % sys.argv[0])
         exit(1)
 
     input_file = sys.argv[1]
     metric = sys.argv[2]
     n = int(sys.argv[3])
+    show = len(sys.argv) == 5
 
     languages = ["en", "es", "fi", "de", "pl", "it"]
 
@@ -73,6 +75,7 @@ if __name__ == "__main__":
 
     n_gram_from_text = n_grams_from_data(data, n)
     input_stat = normalize(n_gram_from_text)
+    distances = {}
 
     for lang in languages:
         lang_stat = Counter()
@@ -94,8 +97,12 @@ if __name__ == "__main__":
         if metric == 'taxi':
             dist = taxi_metric(lang_stat, input_stat)
 
+        distances[lang] = dist
+
         if dist < best:
             best = dist
             best_lng = lang
 
     print(best_lng)
+    if show:
+        pprint(distances)
