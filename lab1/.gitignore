@@ -1,0 +1,9 @@
+out/
+data/
+test/out.txt
+.~lock.stats.ods#
+stats.ods
+test/cosine.txt
+test/max.txt
+test/taxi.txt
+test/euclidean.txt

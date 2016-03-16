@@ -1,0 +1,1292 @@
+Processing metric: cosine
+	Processing n: 2
+		Test: test/it3.txt, expected = it, actual = es
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.833333
+		Long ok: 0.916667
+	Processing n: 3
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.944444
+		Shorts ok: 1.000000
+		Long ok: 0.916667
+	Processing n: 4
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = es
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 5
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.944444
+		Shorts ok: 0.833333
+		Long ok: 1.000000
+	Processing n: 6
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 7
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 8
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.833333
+		Shorts ok: 0.500000
+		Long ok: 1.000000
+	Processing n: 9
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.777778
+		Shorts ok: 0.666667
+		Long ok: 0.833333
+	Processing n: 10
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.777778
+		Shorts ok: 0.666667
+		Long ok: 0.833333
+	Processing n: 11
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.555556
+		Shorts ok: 0.333333
+		Long ok: 0.666667
+	Processing n: 12
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.555556
+		Shorts ok: 0.333333
+		Long ok: 0.666667
+	Processing n: 13
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.444444
+		Shorts ok: 0.333333
+		Long ok: 0.500000
+	Processing n: 14
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.444444
+		Shorts ok: 0.333333
+		Long ok: 0.500000
+	Processing n: 15
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.277778
+		Shorts ok: 0.166667
+		Long ok: 0.333333
+Processing metric: euclidean
+	Processing n: 2
+		Test: test/it3.txt, expected = it, actual = es
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.833333
+		Shorts ok: 0.666667
+		Long ok: 0.916667
+	Processing n: 3
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.944444
+		Shorts ok: 1.000000
+		Long ok: 0.916667
+	Processing n: 4
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.722222
+		Shorts ok: 0.666667
+		Long ok: 0.750000
+	Processing n: 5
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = it
+		Test: test/fi2.txt, expected = fi, actual = it
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = it
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.444444
+		Shorts ok: 0.500000
+		Long ok: 0.416667
+	Processing n: 6
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = it
+		Test: test/fi2.txt, expected = fi, actual = it
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = it
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.444444
+		Shorts ok: 0.500000
+		Long ok: 0.416667
+	Processing n: 7
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = it
+		Test: test/fi2.txt, expected = fi, actual = it
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = it
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.444444
+		Shorts ok: 0.500000
+		Long ok: 0.416667
+	Processing n: 8
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = it
+		Test: test/fi2.txt, expected = fi, actual = it
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = it
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.444444
+		Shorts ok: 0.500000
+		Long ok: 0.416667
+	Processing n: 9
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = it
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = it
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = it
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = it
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = it
+
+		All ok: 0.444444
+		Shorts ok: 0.500000
+		Long ok: 0.416667
+	Processing n: 10
+		Test: test/it3.txt, expected = it, actual = fi
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = fi
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = fi
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = fi
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = fi
+		Test: test/pl2.txt, expected = pl, actual = fi
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = fi
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.444444
+		Shorts ok: 0.333333
+		Long ok: 0.500000
+	Processing n: 11
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = de
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.333333
+		Shorts ok: 0.333333
+		Long ok: 0.333333
+	Processing n: 12
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = de
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = de
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.222222
+		Shorts ok: 0.333333
+		Long ok: 0.166667
+	Processing n: 13
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = de
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = de
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.277778
+		Shorts ok: 0.333333
+		Long ok: 0.250000
+	Processing n: 14
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = de
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = de
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.222222
+		Shorts ok: 0.333333
+		Long ok: 0.166667
+	Processing n: 15
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = de
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = de
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = de
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.166667
+		Shorts ok: 0.166667
+		Long ok: 0.166667
+Processing metric: max
+	Processing n: 2
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = es
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.833333
+		Long ok: 0.916667
+	Processing n: 3
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = pl
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = it
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.777778
+		Shorts ok: 0.666667
+		Long ok: 0.833333
+	Processing n: 4
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = pl
+
+		All ok: 0.888889
+		Shorts ok: 1.000000
+		Long ok: 0.833333
+	Processing n: 5
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = pl
+
+		All ok: 0.777778
+		Shorts ok: 1.000000
+		Long ok: 0.666667
+	Processing n: 6
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = it
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = pl
+
+		All ok: 0.555556
+		Shorts ok: 0.666667
+		Long ok: 0.500000
+	Processing n: 7
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = fi
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.555556
+		Shorts ok: 0.666667
+		Long ok: 0.500000
+	Processing n: 8
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = es
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = es
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = es
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.555556
+		Shorts ok: 0.666667
+		Long ok: 0.500000
+	Processing n: 9
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = es
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = es
+		Test: test/fi1.txt, expected = fi, actual = es
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = es
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = it
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = es
+
+		All ok: 0.333333
+		Shorts ok: 0.500000
+		Long ok: 0.250000
+	Processing n: 10
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = es
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = es
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = es
+		Test: test/fi2.txt, expected = fi, actual = es
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = es
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = it
+		Test: test/pl3.txt, expected = pl, actual = es
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.388889
+		Shorts ok: 0.666667
+		Long ok: 0.250000
+	Processing n: 11
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = fi
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.277778
+		Shorts ok: 0.333333
+		Long ok: 0.250000
+	Processing n: 12
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.222222
+		Shorts ok: 0.166667
+		Long ok: 0.250000
+	Processing n: 13
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = en
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.222222
+		Shorts ok: 0.166667
+		Long ok: 0.250000
+	Processing n: 14
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = en
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.277778
+		Shorts ok: 0.166667
+		Long ok: 0.333333
+	Processing n: 15
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = en
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = en
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = en
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = en
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = en
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = en
+		Test: test/en2.txt, expected = en, actual = fi
+
+		All ok: 0.222222
+		Shorts ok: 0.166667
+		Long ok: 0.250000
+Processing metric: taxi
+	Processing n: 2
+		Test: test/it3.txt, expected = it, actual = es
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.833333
+		Long ok: 0.916667
+	Processing n: 3
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = es
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.944444
+		Shorts ok: 1.000000
+		Long ok: 0.916667
+	Processing n: 4
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = es
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 5
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.944444
+		Shorts ok: 0.833333
+		Long ok: 1.000000
+	Processing n: 6
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = it
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 7
+		Test: test/it3.txt, expected = it, actual = it
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.888889
+		Shorts ok: 0.666667
+		Long ok: 1.000000
+	Processing n: 8
+		Test: test/it3.txt, expected = it, actual = pl
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = pl
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.833333
+		Shorts ok: 0.500000
+		Long ok: 1.000000
+	Processing n: 9
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = it
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = it
+		Test: test/es1.txt, expected = es, actual = es
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.777778
+		Shorts ok: 0.500000
+		Long ok: 0.916667
+	Processing n: 10
+		Test: test/it3.txt, expected = it, actual = fi
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = es
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = pl
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = fi
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.777778
+		Shorts ok: 0.666667
+		Long ok: 0.833333
+	Processing n: 11
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = en
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = en
+
+		All ok: 0.611111
+		Shorts ok: 0.500000
+		Long ok: 0.666667
+	Processing n: 12
+		Test: test/it3.txt, expected = it, actual = en
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = en
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = en
+		Test: test/de3.txt, expected = de, actual = en
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = fi
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = en
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = en
+		Test: test/es1.txt, expected = es, actual = it
+		Test: test/en2.txt, expected = en, actual = fi
+
+		All ok: 0.500000
+		Shorts ok: 0.333333
+		Long ok: 0.583333
+	Processing n: 13
+		Test: test/it3.txt, expected = it, actual = fi
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = fi
+		Test: test/en1.txt, expected = en, actual = en
+		Test: test/fi3.txt, expected = fi, actual = fi
+		Test: test/de3.txt, expected = de, actual = fi
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = it
+		Test: test/de2.txt, expected = de, actual = en
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = fi
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = fi
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.388889
+		Shorts ok: 0.333333
+		Long ok: 0.416667
+	Processing n: 14
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = it
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = de
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = de
+		Test: test/fi1.txt, expected = fi, actual = de
+		Test: test/pl1.txt, expected = pl, actual = de
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = es
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = pl
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = de
+		Test: test/en2.txt, expected = en, actual = de
+
+		All ok: 0.333333
+		Shorts ok: 0.333333
+		Long ok: 0.333333
+	Processing n: 15
+		Test: test/it3.txt, expected = it, actual = de
+		Test: test/it1.txt, expected = it, actual = fi
+		Test: test/es3.txt, expected = es, actual = de
+		Test: test/en1.txt, expected = en, actual = fi
+		Test: test/fi3.txt, expected = fi, actual = de
+		Test: test/de3.txt, expected = de, actual = de
+		Test: test/de1.txt, expected = de, actual = de
+		Test: test/fi2.txt, expected = fi, actual = fi
+		Test: test/fi1.txt, expected = fi, actual = fi
+		Test: test/pl1.txt, expected = pl, actual = fi
+		Test: test/it2.txt, expected = it, actual = de
+		Test: test/de2.txt, expected = de, actual = de
+		Test: test/es2.txt, expected = es, actual = fi
+		Test: test/pl2.txt, expected = pl, actual = de
+		Test: test/pl3.txt, expected = pl, actual = fi
+		Test: test/en3.txt, expected = en, actual = de
+		Test: test/es1.txt, expected = es, actual = fi
+		Test: test/en2.txt, expected = en, actual = fi
+
+		All ok: 0.277778
+		Shorts ok: 0.166667
+		Long ok: 0.333333
