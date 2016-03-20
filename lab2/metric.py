@@ -20,7 +20,7 @@ def levenshtein_metric(word1, word2, basic_metric=True):
             if i > 1 and j > 1 and word1[i - 2] == word2[j - 1] and word1[i - 1] == word2[j - 2] and not basic_metric:
                 lev[i][j] = min(lev[i - 1][j] + DELETE_COST, lev[i][j - 1] + INSERT_COST,
                                 lev[i - 1][j - 1] + aiaj1 * CHANGE_COST,
-                                lev[i - 2][j - 2] + CHANGE_COST + CZECH_ERROR_COST)
+                                lev[i - 2][j - 2] + CZECH_ERROR_COST)
             else:
                 lev[i][j] = min(lev[i - 1][j] + DELETE_COST, lev[i][j - 1] + INSERT_COST,
                                 lev[i - 1][j - 1] + aiaj1 * CHANGE_COST)
