@@ -67,13 +67,16 @@ COSTS_OF_MISTAKES = {
 
 
 # noinspection PyTypeChecker
-def levenshtein_metric(word1, word2, basic_metric=True):
+def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
     lev = [[max(i, j) if min(i, j) == 0 else 0 for j in range(len(word2) + 1)] for i in range(len(word1) + 1)]
     costs = [[CHANGE_COST for _ in range(len(word2) + 1)] for __ in range(len(word1) + 1)]
 
-    if not basic_metric:
-        for i in range(len(word1)):
-            for j in range(len(word2)):
+    for i in range(1, len(word1) + 1):
+        for j in range(1, len(word2) + 1):
+            if not basic_metric:
+                # here we operate on word which indices are [0, n-1], but loops are [1, n] - so some magic
+                i -= 1
+                j -= 1
                 if word1[i] == word2[j] and costs[i][j] == CHANGE_COST:
                     costs[i][j] = 0
                 if i > 1 and j > 1 and word1[i - 1] == word2[j] and word2[j - 1] == word1[i]:
@@ -96,12 +99,16 @@ def levenshtein_metric(word1, word2, basic_metric=True):
                                     current_cost = costs[i + len(mistake_token) - 1][j + len(token) - 1]
                                     costs[i + len(mistake_token) - 1][j + len(token) - 1] = min(mistake_cost,
                                                                                                 current_cost)
-    for i in range(1, len(word1) + 1):
-        for j in range(1, len(word2) + 1):
+                i += 1
+                j += 1
+                
             are_same = 0 if word1[i - 1] == word2[j - 1] else 1
-            lev[i][j] = min(lev[i - 1][j] + DELETE_COST,
-                            lev[i][j - 1] + INSERT_COST,
-                            lev[i - 1][j - 1] + are_same * costs[i - 1][j - 1])
+            dist = min(lev[i - 1][j] + DELETE_COST,
+                       lev[i][j - 1] + INSERT_COST,
+                       lev[i - 1][j - 1] + are_same * costs[i - 1][j - 1])
+            lev[i][j] = dist
+            if dist > best_metric:
+                return dist
 
     return lev[len(word1)][len(word2)]
 
