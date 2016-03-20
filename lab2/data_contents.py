@@ -10,4 +10,4 @@ FILENAME = "data/formy.txt"
 
 def get_data_contents():
     with codecs.open(FILENAME, 'r', ENCONDING) as f:
-        return f.readlines()
+        yield f.readline()
