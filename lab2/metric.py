@@ -101,13 +101,13 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
                                                                                                 current_cost)
                 i += 1
                 j += 1
-                
+
             are_same = 0 if word1[i - 1] == word2[j - 1] else 1
             dist = min(lev[i - 1][j] + DELETE_COST,
                        lev[i][j - 1] + INSERT_COST,
                        lev[i - 1][j - 1] + are_same * costs[i - 1][j - 1])
             lev[i][j] = dist
-            if dist > best_metric:
+            if abs(i - j) <= abs(len(word1) - len(word2)) and dist > best_metric:
                 return dist
 
     return lev[len(word1)][len(word2)]
