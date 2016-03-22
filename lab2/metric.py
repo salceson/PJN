@@ -81,7 +81,7 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
                     costs[i][j] = 0
                 if i > 1 and j > 1 and word1[i - 1] == word2[j] and word2[j - 1] == word1[i]:
                     costs[i - 1][j - 1] = CHANGE_COST
-                    costs[i][j] = -0.5
+                    costs[i][j] = -CZECH_ERROR_COST
                 else:
                     check1 = word1[i:]
                     check2 = word2[j:]
