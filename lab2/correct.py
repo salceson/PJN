@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     time1 = time()
     dictionary = get_data_contents()
-    if word1 not in dictionary:
+    if not (word1 in dictionary):
         for word2 in dictionary:
             if abs(len(word1) - len(word2)) <= MAX_LENGTH_DIFFERENCE:
                 dist = levenshtein_metric(word1, word2, False, best_word_dist)
