@@ -6,7 +6,7 @@ import subprocess
 __author__ = 'Michał Ciołczyk'
 
 if __name__ == "__main__":
-    words = ["pomidor", "pomdior", "dupeczka", "rozwiac", "abzzur", "chumanistyzcny"]
+    words = ["pomidor", "pomdior", "dupeczka", "rozwiac", "abzzur", "teatruw"]
     interpreters = ["python3", "pypy3"]
     for interpreter in interpreters:
         print("Interpreter:", interpreter)

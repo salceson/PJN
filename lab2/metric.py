@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
+import sys
 
 __author__ = 'Michał Ciołczyk'
 
@@ -63,6 +64,9 @@ COSTS_OF_MISTAKES = {
     'wsz': [
         ('fsz', SPELLING_ERROR_COST - CHANGE_COST)
     ],
+    'krz': [
+        ('ksz', SPELLING_ERROR_COST - CHANGE_COST)
+    ],
 }
 
 
@@ -102,11 +106,11 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
                 i += 1
                 j += 1
 
-            are_same = 0 if word1[i - 1] == word2[j - 1] else 1
             dist = min(lev[i - 1][j] + DELETE_COST,
                        lev[i][j - 1] + INSERT_COST,
-                       lev[i - 1][j - 1] + are_same * costs[i - 1][j - 1])
+                       lev[i - 1][j - 1] + costs[i - 1][j - 1])
             lev[i][j] = dist
+
             if abs(i - j) <= abs(len(word1) - len(word2)) and dist > best_metric:
                 return dist
 
@@ -114,16 +118,9 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
 
 
 if __name__ == "__main__":
-    print(levenshtein_metric("biurko", "pióro"))
-    print(levenshtein_metric("biurko", "biurko"))
-    print(levenshtein_metric("biurko", "biukro"))
-    print(levenshtein_metric("biurko", "biórko"))
-    print(levenshtein_metric("testując", "testujac"))
-    print(levenshtein_metric("biurko", "biukro"))
-    print("---")
-    print(levenshtein_metric("biurko", "pióro", False))
-    print(levenshtein_metric("biurko", "biurko", False))
-    print(levenshtein_metric("biurko", "biukro", False))
-    print(levenshtein_metric("biurko", "biukro", False))
-    print(levenshtein_metric("biurko", "biórko", False))
-    print(levenshtein_metric("testując", "testujac", False))
+    if len(sys.argv) != 3:
+        print("Usage python %s word1 word2" % sys.argv[0])
+        exit(1)
+    word1 = sys.argv[1]
+    word2 = sys.argv[2]
+    print('Distance between %s and %s is %f' % (word1, word2, levenshtein_metric(word1, word2, False)))
