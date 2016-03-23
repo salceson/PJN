@@ -77,12 +77,13 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
 
     for i in range(1, len(word1) + 1):
         for j in range(1, len(word2) + 1):
+            # here we operate on word which indices are [0, n-1], but loops are [1, n] - so some magic
+            i -= 1
+            j -= 1
+
+            if word1[i] == word2[j] and costs[i][j] == CHANGE_COST:
+                costs[i][j] = 0
             if not basic_metric:
-                # here we operate on word which indices are [0, n-1], but loops are [1, n] - so some magic
-                i -= 1
-                j -= 1
-                if word1[i] == word2[j] and costs[i][j] == CHANGE_COST:
-                    costs[i][j] = 0
                 if i > 1 and j > 1 and word1[i - 1] == word2[j] and word2[j - 1] == word1[i]:
                     costs[i - 1][j - 1] = CHANGE_COST
                     costs[i][j] = CZECH_ERROR_COST - CHANGE_COST
@@ -103,8 +104,8 @@ def levenshtein_metric(word1, word2, basic_metric=True, best_metric=99999999):
                                     current_cost = costs[i + len(mistake_token) - 1][j + len(token) - 1]
                                     costs[i + len(mistake_token) - 1][j + len(token) - 1] = min(mistake_cost,
                                                                                                 current_cost)
-                i += 1
-                j += 1
+            i += 1
+            j += 1
 
             dist = min(lev[i - 1][j] + DELETE_COST,
                        lev[i][j - 1] + INSERT_COST,
