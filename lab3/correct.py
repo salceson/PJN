@@ -67,6 +67,7 @@ if __name__ == "__main__":
         try:
             word = input("> ")
             time1 = time()
+            # noinspection PyTypeChecker
             corrections = correct_word(
                 word, corpus_statistics, error_statistics, compute_possible_corrections(word, forms)
             )
