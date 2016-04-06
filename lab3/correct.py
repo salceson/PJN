@@ -5,7 +5,7 @@ from operator import itemgetter
 from time import time
 
 from metric import levenshtein_metric
-from utils import corpus_stats, error_stats, get_corrections
+from utils import corpus_stats, error_stats, get_corrections, get_stopwords
 
 __author__ = "Michał Ciołczyk"
 
@@ -20,17 +20,19 @@ CORPUS = [
 ERROR_FILE = "data/bledy.txt"
 FORMS_FILE = "data/formy.txt"
 FORMS_ENCODING = "iso-8859-2"
-MAX_LENGTH_DIFFERENCE = 3
-LAMBDA = 5
+CORRECTIONS_NUM = 20
+MAX_LENGTH_DIFFERENCE = 1
+LAMBDA = 0.5
 ALPHABET = 'aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż'
+ENHANCED_VERSION = False  # False - normal, True - generating possibilities
 
 
 def correct_word(word, corpus_stats, errors_stats, corrections):
     corrections = {
-        correction: errors_stats[levenshtein_metric(word, correction, False)] * corpus_stats[correction] ** LAMBDA for
+        correction: errors_stats[levenshtein_metric(word, correction, False)] * (corpus_stats[correction] ** LAMBDA) for
         correction in corrections if abs(len(word) - len(correction)) <= MAX_LENGTH_DIFFERENCE
         }
-    return nlargest(10, corrections.items(), key=itemgetter(1))
+    return nlargest(CORRECTIONS_NUM, corrections.items(), key=itemgetter(1))
 
 
 def compute_possible_corrections(word, forms):
@@ -57,8 +59,9 @@ def known_edits2(word, forms):
 if __name__ == "__main__":
     print("Please wait, reading data files...")
 
-    forms = get_corrections(FORMS_FILE, FORMS_ENCODING)
-    corpus_statistics = corpus_stats(CORPUS, len(forms))
+    stopwords = get_stopwords()
+    forms = get_corrections(FORMS_FILE, stopwords, FORMS_ENCODING)
+    corpus_statistics = corpus_stats(CORPUS, len(forms), stopwords)
     error_statistics = error_stats(ERROR_FILE)
 
     print("Please enter words to correct them.")
@@ -69,11 +72,13 @@ if __name__ == "__main__":
             time1 = time()
             # noinspection PyTypeChecker
             corrections = correct_word(
-                word, corpus_statistics, error_statistics, compute_possible_corrections(word, forms)
+                word, corpus_statistics, error_statistics,
+                compute_possible_corrections(word, forms) if ENHANCED_VERSION else forms
             )
             time2 = time()
-            print(corrections)
-            print("Corrections: %s" % ', '.join(list(map(itemgetter(0), corrections))))
+            print("Corrections:")
+            for (corr, value) in corrections:
+                print("\t%s (%.8g)" % (corr, value))
             print("Run for %s seconds." % (time2 - time1))
         except EOFError:
             break
