@@ -7,3 +7,4 @@ Zadania:
 * **Laboratorium 2** - metryka Levenshtein'a (odległość redakcyjna), jej modyfikacje
 i poprawianie błędów ortograficznych (prosty spell checker)
 * **Laboratorium 3** - spell checker oparty na klasyfikatorze Bayesa
+* **Laboratorium 4** - prosty clustering w oparciu o metryki DICE, COSINE, LCS (WIP)
