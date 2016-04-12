@@ -7,7 +7,6 @@ from unidecode import unidecode
 
 __author__ = "Michał Ciołczyk"
 
-_REMOVE_NOT_LETTERS = re.compile("[^A-Z\s]")
 _N = 2
 
 
@@ -20,7 +19,6 @@ def _normalize(vec):
 def _n_grams_from_data(data, n=_N):
     n_grams = Counter()
     data = unidecode(data.lower()).lower()
-    data = _REMOVE_NOT_LETTERS.sub('', data)
     for word in data.split():
         for n_gram in zip(*(word[c:] for c in range(n))):
             n_grams["".join(n_gram)] += 1

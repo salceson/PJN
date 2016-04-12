@@ -8,12 +8,17 @@ from utils import write_result, calculate_quality
 
 __author__ = "Michał Ciołczyk"
 
-_ACTIONS = ["preprocess", "dice", "cosine", "lcs"]
+_ACTIONS = ["compare", "dice", "cosine", "lcs"]
 _METRICS = ["dice", "cosine", "lcs"]
 _INPUT_FILENAME = "data/lines.txt"
 _OUTPUT_PATTERN = "data/output_%s.txt"
 _REFERENCE_FILENAME = "data/clusters.txt"
 _DEBUG = True
+_THRESHOLDS = {
+    'dice': 0.2,
+    'cosine': 0.2,
+    'lcs': 0.333
+}
 
 
 def _usage():
@@ -31,14 +36,17 @@ if __name__ == "__main__":
         _usage()
     if action == "compare":
         for metric in _METRICS:
-            print("Metric %s:" % metric)
-            precision, recall, f1 = calculate_quality(_OUTPUT_PATTERN % metric, _REFERENCE_FILENAME)
-            print("\tPrecision: %f, recall: %f, f1: %f" % (precision, recall, f1))
+            try:
+                precision, recall, f1 = calculate_quality(_OUTPUT_PATTERN % metric, _REFERENCE_FILENAME)
+                print("Metric %s:" % metric)
+                print("\tPrecision: %f, recall: %f, f1: %f" % (precision, recall, f1))
+            except:
+                pass
     else:
         metric_txt = action
         metric = dice_metric if action == 'dice' else cosine_metric if action == 'cosine' else lcs_metric
         print("Preprocessing data...")
-        print("\tInput: %s" % _INPUT_FILENAME)
+        print("Input: %s" % _INPUT_FILENAME)
         counter = 0
         preprocessed = {}
         result = {}
@@ -47,9 +55,9 @@ if __name__ == "__main__":
                 preprocessed_line = process(line)
                 preprocessed[line] = preprocessed_line
                 if _DEBUG and counter % 50 == 0:
-                    print("\t\t%s => %s" % (line, preprocessed_line))
+                    print("%s => %s" % (line, preprocessed_line))
                 counter += 1
-        clusters = cluster(preprocessed, metric)
+        clusters = cluster(preprocessed, metric, _THRESHOLDS[metric_txt])
         for line, preprocessed_line in preprocessed.items():
             result[line] = clusters[preprocessed_line]
         write_result(result, _OUTPUT_PATTERN % metric_txt)
