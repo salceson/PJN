@@ -34,7 +34,7 @@ def calculate_quality(result_filename, reference_filename):
     tn = 0
     fp = 0
     fn = 0
-    for (a, a_cluster), (b, b_cluster) in combinations(result.iteritems(), 2):
+    for (a, a_cluster), (b, b_cluster) in combinations(result.items(), 2):
         if reference[a] == reference[b]:
             if a_cluster == b_cluster:
                 # True positive - clusters for a and b are the same in BOTH result and reference are the same
@@ -49,7 +49,7 @@ def calculate_quality(result_filename, reference_filename):
             else:
                 # True negative - clusters for a and b are different in both result and reference
                 tn += 1
-    precision = float(tp) / (tp + fp)  # How much of the data is clustered correctly?
-    recall = float(tp) / (tp + fn)  # How much of the data
+    precision = float(tp) / (tp + fp)
+    recall = float(tp) / (tp + fn)
     f1 = 2 * ((precision * recall) / (precision + recall))
     return precision, recall, f1

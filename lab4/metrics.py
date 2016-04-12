@@ -7,7 +7,7 @@ from unidecode import unidecode
 
 __author__ = "Michał Ciołczyk"
 
-_REMOVE_NOT_LETTERS = re.compile("[^a-z\s]")
+_REMOVE_NOT_LETTERS = re.compile("[^A-Z\s]")
 _N = 2
 
 
