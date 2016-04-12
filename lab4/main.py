@@ -50,4 +50,6 @@ if __name__ == "__main__":
                     print("\t\t%s => %s" % (line, preprocessed_line))
                 counter += 1
         clusters = cluster(preprocessed, metric)
-        write_result(clusters, _OUTPUT_PATTERN % metric_txt)
+        for line, preprocessed_line in preprocessed.items():
+            result[line] = clusters[preprocessed_line]
+        write_result(result, _OUTPUT_PATTERN % metric_txt)
