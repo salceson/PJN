@@ -3,6 +3,5 @@
 __author__ = "Michał Ciołczyk"
 
 
-def process(line):
-    line = line.upper()
+def cluster(filename, metric):
     pass
