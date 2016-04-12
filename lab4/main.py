@@ -49,5 +49,5 @@ if __name__ == "__main__":
                 if _DEBUG and counter % 50 == 0:
                     print("\t\t%s => %s" % (line, preprocessed_line))
                 counter += 1
-        clusters = cluster(preprocessed, action)
+        clusters = cluster(preprocessed, metric)
         write_result(clusters, _OUTPUT_PATTERN % metric_txt)

@@ -21,7 +21,7 @@ def _read_result(filename):
 
 def write_result(result, filename):
     with open(filename, 'w') as f:
-        for cluster, lines in groupby(result.iteritems(), itemgetter(1)):
+        for cluster, lines in groupby(result.items(), itemgetter(1)):
             for line, _ in lines:
                 f.write(line + '\n')
             f.write('\n%s' % _CLUSTER_SEPARATOR)
