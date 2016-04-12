@@ -1,5 +1,6 @@
 # coding: utf-8
 import sys
+from time import time
 
 from clustering import cluster
 from metrics import dice_metric, cosine_metric, lcs_metric
@@ -13,10 +14,10 @@ _METRICS = ["dice", "cosine", "lcs"]
 _INPUT_FILENAME = "data/lines.txt"
 _OUTPUT_PATTERN = "data/output_%s.txt"
 _REFERENCE_FILENAME = "data/clusters.txt"
-_DEBUG = True
+_DEBUG = False
 _THRESHOLDS = {
-    'dice': 0.2,
-    'cosine': 0.2,
+    'dice': 0.12,
+    'cosine': 0.75,
     'lcs': 0.333
 }
 
@@ -34,7 +35,9 @@ if __name__ == "__main__":
     action = args[1]
     if action not in _ACTIONS:
         _usage()
+    time1 = time()
     if action == "compare":
+        print("Calculating statistics...")
         for metric in _METRICS:
             try:
                 precision, recall, f1 = calculate_quality(_OUTPUT_PATTERN % metric, _REFERENCE_FILENAME)
@@ -42,6 +45,8 @@ if __name__ == "__main__":
                 print("\tPrecision: %f, recall: %f, f1: %f" % (precision, recall, f1))
             except:
                 pass
+        time2 = time()
+        print("Run for %f s." % (time2 - time1))
     else:
         metric_txt = action
         metric = dice_metric if action == 'dice' else cosine_metric if action == 'cosine' else lcs_metric
@@ -57,7 +62,11 @@ if __name__ == "__main__":
                 if _DEBUG and counter % 50 == 0:
                     print("%s => %s" % (line, preprocessed_line))
                 counter += 1
-        clusters = cluster(preprocessed, metric, _THRESHOLDS[metric_txt])
+        print("Clustering...")
+        clusters = cluster(preprocessed, metric, _THRESHOLDS[metric_txt], _DEBUG)
         for line, preprocessed_line in preprocessed.items():
             result[line] = clusters[preprocessed_line]
+        print("Writing result...")
         write_result(result, _OUTPUT_PATTERN % metric_txt)
+        time2 = time()
+        print("Run for %f s." % (time2 - time1))

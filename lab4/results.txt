@@ -1,0 +1,8 @@
+Calculating statistics...
+Metric dice:
+        Precision: 0.605122, recall: 0.410751, f1: 0.489342
+Metric cosine:
+        Precision: 0.604838, recall: 0.392966, f1: 0.476408
+Metric lcs:
+        Precision: 0.597100, recall: 0.415722, f1: 0.490170
+Run for 39.174643 s.
