@@ -38,7 +38,6 @@ if __name__ == "__main__":
         print("Preparing letter n-grams...")
         letters = LettersNGramsStats(_N, _INPUT)
         print("Saving to file %s..." % _STATS_LETTERS)
-        print(letters.ngrams_stats)
         write_stats_to_file(letters, _STATS_LETTERS)
         print("Done")
     else:

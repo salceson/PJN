@@ -18,11 +18,8 @@ class _NGramsStats(object):
             texts = f.read()
             texts = re.split(_TEXT_SEPARATOR, texts)
             for input in self._generate_texts_from_raw_input(texts):
-                self._update_ngrams_from_text(input, self.ngrams_stats)
-
-    def _update_ngrams_from_text(self, input, ngrams_stats):
-        for it in zip(*(input[k:] for k in range(self.n))):
-            ngrams_stats[it[:self.n - 1]][it[self.n - 1]] += 1
+                for it in zip(*(input[k:] for k in range(self.n))):
+                    self.ngrams_stats[it[:self.n - 1]][it[self.n - 1]] += 1
 
     def _generate_texts_from_raw_input(self, input):
         raise NotImplementedError()
