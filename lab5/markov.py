@@ -1,42 +1,57 @@
 # coding: utf-8
-from math import fsum
-from operator import itemgetter
-from random import random, shuffle
+from bisect import bisect
+from random import randint
 
 __author__ = "Michał Ciołczyk"
 
 
-class MarkovChain(object):
-    def __init__(self, corpus_ngrams_stats, separator=''):
+class _MarkovChain(object):
+    def __init__(self, ngrams, n, separator):
+        self.ngrams = ngrams
+        self.n = n
         self.separator = separator
-        self.transitions = {}
-        for (state, _) in corpus_ngrams_stats.keys():
-            self.transitions[state] = []
-        for (prev_state, next_state), prob in corpus_ngrams_stats.items():
-            self.transitions[prev_state].append((next_state, prob))
-        for state in self.transitions:
-            if not self.transitions[state]:
-                self.transitions[state].append((state, 1.0))
-            else:
-                prob_sum = fsum(self.transitions[state])
-                self.transitions[state] = [(state, prob / prob_sum) for (state, prob) in self.transitions[state]]
-        for state in self.transitions:
-            self.transitions[state] = sorted(self.transitions[state], key=itemgetter(1), reverse=True)
 
-    def generate(self, n):
-        output = []
-        state = shuffle(list(self.transitions.keys()))[0]
-        output.append(state)
-        for i in range(n-1):
-            state = self._random_with_probabilities(self.transitions[state])
-            output.append(state)
-        return self.separator.join(output)
+    def generate(self):
+        raise NotImplementedError()
 
     @staticmethod
-    def _random_with_probabilities(items_with_sorted_probabilities):
-        rand_num = random()
-        prob_sum = 0.0
-        for (item, prob) in items_with_sorted_probabilities:
-            if rand_num < (prob + prob_sum):
-                return item
-            prob_sum += prob
+    def _random_with_probabilities(choices):
+        values, weights = zip(*choices.items())
+        total = 0
+        cumul_weights = []
+        for w in weights:
+            total += w
+            cumul_weights.append(total)
+        x = randint(0, total - 1)
+        i = bisect(cumul_weights, x)
+        return values[i]
+
+
+class LettersMarkovChain(_MarkovChain):
+    def __init__(self, ngrams, n):
+        super().__init__(ngrams, n, '')
+
+    def generate(self):
+        output = ' ' * (self.n - 1)
+        while True:
+            last = tuple(output[-self.n + 1:])
+            try:
+                output += self._random_with_probabilities(self.ngrams[last])
+            except ValueError:
+                break
+        return self.separator.join(output[(self.n - 1):-1])
+
+
+class WordsMarkovChain(_MarkovChain):
+    def __init__(self, ngrams, n):
+        super().__init__(ngrams, n, ' ')
+
+    def generate(self):
+        output = [''] * self.n
+        while True:
+            last = tuple(output[-self.n + 1:])
+            try:
+                output.append(self._random_with_probabilities(self.ngrams[last]))
+            except ValueError:
+                break
+        return self.separator.join(output)

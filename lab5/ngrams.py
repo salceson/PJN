@@ -1,70 +1,56 @@
 # coding: utf-8
 import codecs
-from collections import defaultdict
-from math import fsum
+import pickle
+import re
+from collections import defaultdict, Counter
 
 __author__ = "Michał Ciołczyk"
 
+_TEXT_SEPARATOR = re.compile('\n#[0-9]{6}\n')
+_NOT_LETTERS = re.compile('[^a-ząćęłóńśżź]+')
 
-class _CorpusStatsAndNGramsStats(object):
-    def __init__(self, corpus_filenames, encodings):
-        ngrams_stats = defaultdict(int)
-        for filename in corpus_filenames:
-            with codecs.open(filename, encoding=encodings[filename]) as f:
-                file_ngrams = self._get_ngrams_and_stats_from_text(f.read())
-                ngrams_stats.update(file_ngrams)
-        ngrams_count = fsum(ngrams_stats)
-        self.ngrams_stats = {ngram: float(count) / ngrams_count for (ngram, count) in ngrams_stats.values()}
 
-    def _get_ngrams_and_stats_from_text(self, text):
+class _NGramsStats(object):
+    def __init__(self, n, corpus_filename, encoding='utf-8'):
+        self.n = n
+        self.ngrams_stats = defaultdict(Counter)
+        with codecs.open(corpus_filename, encoding=encoding) as f:
+            texts = f.read()
+            texts = re.split(_TEXT_SEPARATOR, texts)
+            for input in self._generate_texts_from_raw_input(texts):
+                self._update_ngrams_from_text(input, self.ngrams_stats)
+
+    def _update_ngrams_from_text(self, input, ngrams_stats):
+        for it in zip(*(input[k:] for k in range(self.n))):
+            ngrams_stats[it[:self.n - 1]][it[self.n - 1]] += 1
+
+    def _generate_texts_from_raw_input(self, input):
         raise NotImplementedError()
 
 
-class WordsCorpusStatsAndNGramsStats(_CorpusStatsAndNGramsStats):
-    def __init__(self, corpus_filenames, encodings=defaultdict(lambda: 'utf-8')):
-        super().__init__(corpus_filenames, encodings)
+class WordsNGramsStats(_NGramsStats):
+    def __init__(self, n, corpus_filename, encoding='utf-8'):
+        super().__init__(n, corpus_filename, encoding)
 
-    def _get_ngrams_and_stats_from_text(self, text):
-        first = True
-        prev = ''
-        ngrams = defaultdict(int)
-        for word in text.split(' '):
-            if first:
-                prev = word
-                first = False
-                continue
-            ngrams[(prev, word)] += 1
-            prev = word
-        return ngrams
+    def _generate_texts_from_raw_input(self, input):
+        return [[''] * self.n + re.split('\s+', text.strip()) for text in input if text]
 
 
-class LettersCorpusStatsAndNGramsStats(_CorpusStatsAndNGramsStats):
-    def __init__(self, corpus_filenames, encodings=defaultdict(lambda: 'utf-8')):
-        super().__init__(corpus_filenames, encodings)
+class LettersNGramsStats(_NGramsStats):
+    def __init__(self, n, corpus_filename, encoding='utf-8'):
+        super().__init__(n, corpus_filename, encoding)
 
-    def _get_ngrams_and_stats_from_text(self, text):
-        ngrams = defaultdict(int)
-        for word in text.split(' '):
-            prev = ''
-            first = True
-            for letter in word:
-                if first:
-                    prev = letter
-                    first = False
-                    continue
-                ngrams[(prev, letter)] += 1
-                prev = letter
-        return ngrams
-
-
-class _FileCorpusStatsAndNGramsStats(object):
-    def __init__(self, ngrams_stats):
-        self.ngrams_stats = ngrams_stats
+    # noinspection PyTypeChecker
+    def _generate_texts_from_raw_input(self, input):
+        texts = [_NOT_LETTERS.sub(' ', text.strip()) for text in input if text]
+        return [' ' * (self.n - 1) + word + '^' for text in texts for word in text.split()]
 
 
 def read_stats_from_file(filename):
-    pass
+    with open(filename, 'rb') as f:
+        return pickle.load(f)
 
 
 def write_stats_to_file(stats_object, filename):
-    pass
+    with open(filename, 'wb') as f:
+        pickle.dump(stats_object.ngrams_stats, f)

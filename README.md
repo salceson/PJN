@@ -8,3 +8,4 @@ Zadania:
 i poprawianie błędów ortograficznych (prosty spell checker)
 * **Laboratorium 3** - spell checker oparty na klasyfikatorze Bayesa
 * **Laboratorium 4** - prosty clustering w oparciu o metryki DICE, COSINE, LCS
+* **Laboratorium 5** - generowanie artykułów i słów w oparciu o łancuchy Markova
