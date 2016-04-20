@@ -46,7 +46,7 @@ if __name__ == "__main__":
         print('Loading ngrams...')
         ngrams = read_stats_from_file(filename)
         print('Done')
-        print('Generating output (trigger keyboard interrupt to stop)...')
+        print('Generating output...')
         markov = WordsMarkovChain(ngrams, n) if action == 'words' else LettersMarkovChain(ngrams, n)
         while True:
             try:
@@ -55,8 +55,9 @@ if __name__ == "__main__":
                     continue
                 print(output)
                 print()
-                sleep(5)
+                print("Press any key to continue, ctrl+d to end.")
+                input()
             except UnicodeEncodeError:
                 continue
-            except KeyboardInterrupt:
+            except EOFError:
                 break
