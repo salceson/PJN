@@ -8,45 +8,46 @@ from ngrams import LettersNGramsStats, WordsNGramsStats, write_stats_to_file, re
 __author__ = "Michał Ciołczyk"
 
 _POSSIBLE_USAGES = ['prepare', 'letters', 'words']
-_N = 2
 _INPUT = 'data/pap.txt'
-_STATS_WORDS = 'data/words.dat'
-_STATS_LETTERS = 'data/letters.dat'
+_STATS_WORDS = 'data/words_%s.dat'
+_STATS_LETTERS = 'data/letters_%s.dat'
 
 
 def _usage(argv):
-    print("Usage: python %s <action>" % argv[0])
+    print("Usage: python %s <action> <n>" % argv[0])
     print("\t where <action> is one of %s" % str(_POSSIBLE_USAGES))
+    print("\t and <n> is length of n-grams")
 
 
 if __name__ == "__main__":
     argv = sys.argv
     argc = len(argv)
-    if argc != 2:
+    if argc != 3:
         _usage(argv)
         exit(1)
     action = argv[1]
+    n = int(argv[2])
     if action not in _POSSIBLE_USAGES:
         _usage(argv)
         exit(1)
     elif action == 'prepare':
         print("Preparing word n-grams...")
-        words = WordsNGramsStats(_N, _INPUT)
-        print("Saving to file %s..." % _STATS_WORDS)
-        write_stats_to_file(words, _STATS_WORDS)
+        words = WordsNGramsStats(n, _INPUT)
+        print("Saving to file %s..." % (_STATS_WORDS % n))
+        write_stats_to_file(words, _STATS_WORDS % n)
         print("Done")
         print("Preparing letter n-grams...")
-        letters = LettersNGramsStats(_N, _INPUT)
-        print("Saving to file %s..." % _STATS_LETTERS)
-        write_stats_to_file(letters, _STATS_LETTERS)
+        letters = LettersNGramsStats(n, _INPUT)
+        print("Saving to file %s..." % (_STATS_LETTERS % n))
+        write_stats_to_file(letters, _STATS_LETTERS % n)
         print("Done")
     else:
-        filename = _STATS_WORDS if action == 'words' else _STATS_LETTERS
+        filename = _STATS_WORDS % n if action == 'words' else _STATS_LETTERS % n
         print('Loading ngrams...')
         ngrams = read_stats_from_file(filename)
         print('Done')
         print('Generating output (trigger keyboard interrupt to stop)...')
-        markov = WordsMarkovChain(ngrams, _N) if action == 'words' else LettersMarkovChain(ngrams, _N)
+        markov = WordsMarkovChain(ngrams, n) if action == 'words' else LettersMarkovChain(ngrams, n)
         while True:
             try:
                 output = markov.generate()
