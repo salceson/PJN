@@ -2,6 +2,7 @@
 import codecs
 import re
 from collections import Counter
+from operator import itemgetter
 
 __author__ = "Michał Ciołczyk"
 
@@ -26,11 +27,11 @@ def n_grams_stats(filename, encoding='utf-8'):
         print("\tDone")
         print("Generating 2grams stats...")
         with codecs.open(_2GRAMS_FILENAME, 'w', 'utf-8') as f2:
-            for gram, count in _n_grams_from_data(data, 2).items():
+            for gram, count in sorted(_n_grams_from_data(data, 2).items(), key=itemgetter(1), reverse=True):
                 f2.write('%s,%d\n' % (gram, count))
         print("\tDone")
         print("Generating 3grams stats...")
         with codecs.open(_3GRAMS_FILENAME, 'w', 'utf-8') as f3:
-            for gram, count in _n_grams_from_data(data, 3).items():
+            for gram, count in sorted(_n_grams_from_data(data, 3).items(), key=itemgetter(1), reverse=True):
                 f3.write('%s,%d\n' % (gram, count))
         print("\tDone")

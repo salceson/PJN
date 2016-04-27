@@ -7,7 +7,7 @@ from plp import PLP
 __author__ = "Michał Ciołczyk"
 
 _FILENAME = "data/odm.txt"
-_ENCODING = "latin-1"
+_ENCODING = "windows-1250"
 _basic_forms = defaultdict(list)
 _initialized = False
 _plp = PLP()
