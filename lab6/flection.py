@@ -42,9 +42,9 @@ def basic_form(word):
     else:
         forms = _basic_forms.get(word)
     if not forms:
-        return None
+        return word
     else:
         try:
             return forms[0]
         except IndexError:
-            return None
+            return word
