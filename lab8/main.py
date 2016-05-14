@@ -42,7 +42,7 @@ if __name__ == '__main__':
         calculate_lda()
     if action == 'notes':
         print('Reading notes...')
-        with open('data/notes.dat') as f:
+        with open('data/notes.dat', 'rb') as f:
             data = pickle.loads(f.read())
         while True:
             try:
@@ -129,8 +129,8 @@ if __name__ == '__main__':
                                      for i, p in enumerate(lsa_projections)
                                      if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
                 max_similarities = nsmallest(10, docs_similarities, key=itemgetter(1))
-                print('10 top similarities:')
-                print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
+                print('10 most similar notes:')
+                print(', '.join(['%d: %.2f%%' % (i, s * 100) for i, s in max_similarities]))
                 print()
             except (ValueError, KeyError):
                 continue
@@ -155,8 +155,8 @@ if __name__ == '__main__':
                                      for i, p in enumerate(lda_projections)
                                      if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
                 max_similarities = nsmallest(10, docs_similarities, key=itemgetter(1))
-                print('10 top similarities:')
-                print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
+                print('10 most similar notes:')
+                print(', '.join(['%d: %.2f%%' % (i, s * 100) for i, s in max_similarities]))
                 print()
             except (ValueError, KeyError):
                 continue
