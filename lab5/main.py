@@ -1,6 +1,5 @@
 # coding: utf-8
 import sys
-from time import sleep
 
 from markov import LettersMarkovChain, WordsMarkovChain
 from ngrams import LettersNGramsStats, WordsNGramsStats, write_stats_to_file, read_stats_from_file

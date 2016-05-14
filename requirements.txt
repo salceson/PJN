@@ -1,0 +1,6 @@
+numpy
+scipy
+matplotlib
+unidecode
+plp
+-e git://github.com/salceson/gensim.git#egg=gensim

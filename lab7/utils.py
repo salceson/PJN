@@ -16,7 +16,7 @@ _NOT_LETTERS = re.compile('[^a-ząćęłóńśżź]+')
 _SPACES = re.compile('\s+')
 
 
-def read_data(filename, encoding='utf-8'):
+def _read_data(filename, encoding='utf-8'):
     with codecs.open(filename, encoding=encoding) as f:
         texts = f.read()
         texts = re.split(_TEXT_SEPARATOR, texts)
@@ -24,7 +24,7 @@ def read_data(filename, encoding='utf-8'):
 
 
 def prepare_data(filename, encoding='utf-8'):
-    data = read_data(filename, encoding)
+    data = _read_data(filename, encoding)
     data_to_save = {}
     term_frequencies = {}
     doc_frequencies = Counter()
