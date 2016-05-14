@@ -10,3 +10,5 @@ i poprawianie błędów ortograficznych (prosty spell checker)
 * **Laboratorium 4** - prosty clustering w oparciu o metryki DICE, COSINE, LCS
 * **Laboratorium 5** - generowanie artykułów i słów w oparciu o łancuchy Markova
 * **Laboratorium 6** - prawo Zipfa i Mandelbrota - statystyki Potopu
+* **Laboratorium 7** - statystyki df, tf, tf-idf, wyszukiwanie na podstawie słów kluczowych, wyszukiwanie
+podobnych notatek dla korpusu PAP
