@@ -1,16 +1,22 @@
 # coding: utf-8
 import pickle
 import sys
-from functools import reduce
+from heapq import nlargest
+from operator import itemgetter
+from pprint import pprint
 
-from flection import basic_form
+from gensim import corpora, models
 from utils import calculate_lda, calculate_lsi, cosine_metric, preprocess_data, create_tfidf
 
 __author__ = "Michał Ciołczyk"
 
 _DATA_FILE = 'data/pap.txt'
 _ENCODING = 'utf-8'
-_ACTIONS = ['preprocess', 'tfidf', 'preparelsa', 'preparelda', 'file', 'search', 'search_keywords']
+_ACTIONS = ['preprocess', 'preparetfidf',
+            'preparelsa', 'preparelda',
+            'notes', 'tfidf',
+            'topicslsa', 'topicslda',
+            'similarlsa', 'similarlda']
 _SIMILAR_THRESHOLD = 0.4
 
 
@@ -28,69 +34,132 @@ if __name__ == '__main__':
         _usage(sys.argv)
     if action == 'preprocess':
         preprocess_data(_DATA_FILE, _ENCODING)
-    if action == 'tfidf':
+    if action == 'preparetfidf':
         create_tfidf()
     if action == 'preparelsa':
         calculate_lsi()
     if action == 'preparelda':
         calculate_lda()
-    if action == 'file':
-        file = input('Enter file: data/')
-        with open('data/' + file, 'rb') as f:
-            file_contents = pickle.loads(f.read())
-        print('File read')
+    if action == 'notes':
+        print('Reading notes...')
+        with open('data/notes.dat') as f:
+            data = pickle.loads(f.read())
         while True:
             try:
-                i = input('Enter index (ctrl+d to end program): ')
-                try:
-                    i = int(i)
-                except:
-                    pass
-                try:
-                    print(file_contents[i])
-                except KeyError:
-                    pass
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                print(data[index])
+                print()
+            except (ValueError, KeyError):
+                continue
             except (KeyboardInterrupt, EOFError):
+                print()
                 exit(0)
-    if action == 'search_keywords':
-        print('Reading data...')
-        with open('data/keywords.dat', 'rb') as f:
-            keywords = pickle.loads(f.read())
+    if action == 'tfidf':
+        print('Reading tf-idf and dictionary...')
+        with open('data/tf-idf.dat', 'rb') as f:
+            tfidf = pickle.loads(f.read())
+        dictionary = corpora.Dictionary.load('data/dictionary.dat')
         print('Done')
         while True:
             try:
-                search_terms = input('Enter keywords separated by space (ctrl+d to end program): ')
-                search_terms = search_terms.split(' ')
-                search_terms = list(map(lambda x: basic_form(x), search_terms))
-                notes_found = []
-                for i in range(len(keywords)):
-                    show = reduce(lambda acc, x: acc and (x in keywords[i]), search_terms, True)
-                    if show:
-                        notes_found.append(str(i))
-                print('Found notes numbers: ' + ', '.join(notes_found))
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                doc_tf_idf = [(dictionary[id], freq) for id, freq in tfidf[index]]
+                print(doc_tf_idf)
+                print()
+            except (ValueError, KeyError):
+                continue
             except (KeyboardInterrupt, EOFError):
+                print()
                 exit(0)
-    if action == 'search':
-        print('Reading data...')
-        with open('data/idfs.dat', 'rb') as f:
-            idfs = pickle.loads(f.read())
+    if action == 'topicslsa':
+        print('Reading LSA model and tf-idf...')
+        lsi_model = models.LsiModel.load('data/lsi.dat')
+        with open('data/tf-idf.dat', 'rb') as f:
+            tfidf = pickle.loads(f.read())
         print('Done')
-        notes_len = len(idfs)
         while True:
             try:
-                note = input('Enter note number (max: %d, ctrl+d to end program): ' % notes_len)
-                try:
-                    note = int(note)
-                    note_idf = idfs[note]
-                except (ValueError, KeyError):
-                    continue
-                similar = []
-                for i in range(len(idfs)):
-                    if i == note:
-                        continue
-                    metric = cosine_metric(idfs[i], note_idf)
-                    if metric < _SIMILAR_THRESHOLD:
-                        similar.append('%d (%.3f%%)' % (i, metric * 100))
-                print('Found similar notes numbers: ' + ', '.join(similar))
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                doc_tf_idf = tfidf[index]
+                doc_projection = lsi_model[doc_tf_idf]
+                topics = [lsi_model.show_topic(x)
+                          for x, _ in nlargest(10, doc_projection, key=itemgetter(1))]
+                pprint(topics)
+                print()
+            except (ValueError, KeyError):
+                continue
             except (KeyboardInterrupt, EOFError):
+                print()
+                exit(0)
+    if action == 'topicslda':
+        print('Reading LDA model and tf-idf...')
+        lda_model = models.LdaModel.load('data/lda.dat')
+        with open('data/tf-idf.dat', 'rb') as f:
+            tfidf = pickle.loads(f.read())
+        print('Done')
+        while True:
+            try:
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                doc_tf_idf = tfidf[index]
+                doc_projection = lda_model[doc_tf_idf]
+                topics = [lda_model.show_topic(x)
+                          for x, _ in nlargest(10, doc_projection, key=itemgetter(1))]
+                pprint(topics)
+                print()
+            except (ValueError, KeyError):
+                continue
+            except (KeyboardInterrupt, EOFError):
+                print()
+                exit(0)
+    if action == 'similarlsa':
+        print('Reading LSA model and tf-idf...')
+        lsa_model = models.LsiModel.load('data/lsi.dat')
+        with open('data/tf-idf.dat', 'rb') as f:
+            tfidf = pickle.loads(f.read())
+        print('Done')
+        print('Projecting tf-idf onto LDA...')
+        lsa_projections = lsa_model[tfidf]
+        print('Done')
+        while True:
+            try:
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                doc_tf_idf = tfidf[index]
+                doc_projection = lsa_projections[index]
+                docs_similarities = [(i, cosine_metric(doc_projection, p))
+                                     for i, p in enumerate(lsa_projections)
+                                     if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
+                max_similarities = nlargest(10, docs_similarities, key=-itemgetter(1))
+                print('10 top similarities:')
+                print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
+                print()
+            except (ValueError, KeyError):
+                continue
+            except (KeyboardInterrupt, EOFError):
+                print()
+                exit(0)
+    if action == 'similarlda':
+        print('Reading LDA model and tf-idf...')
+        lda_model = models.LdaModel.load('data/lda.dat')
+        with open('data/tf-idf.dat', 'rb') as f:
+            tfidf = pickle.loads(f.read())
+        print('Done')
+        print('Projecting tf-idf onto LDA...')
+        lda_projections = lda_model[tfidf]
+        print('Done')
+        while True:
+            try:
+                index = int(input('Enter note number (ctrl+d to end program): '))
+                doc_tf_idf = tfidf[index]
+                doc_projection = lda_projections[index]
+                docs_similarities = [(i, cosine_metric(doc_projection, p))
+                                     for i, p in enumerate(lda_projections)
+                                     if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
+                max_similarities = nlargest(10, docs_similarities, key=-itemgetter(1))
+                print('10 top similarities:')
+                print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
+                print()
+            except (ValueError, KeyError):
+                continue
+            except (KeyboardInterrupt, EOFError):
+                print()
                 exit(0)

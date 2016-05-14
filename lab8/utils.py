@@ -53,6 +53,7 @@ def preprocess_data(filename, encoding='utf-8'):
     dictionary.compactify()
     print('\tSaving dictionary...')
     dictionary.save('data/dictionary.dat')
+    print('Done')
 
 
 def create_tfidf():
@@ -101,8 +102,8 @@ def calculate_lda():
 
 
 def cosine_metric(vec1, vec2):
-    vec1 = {k: v for k, v in vec1.items()}
-    vec2 = {k: v for k, v in vec2.items()}
+    vec1 = {k: v for k, v in vec1}
+    vec2 = {k: v for k, v in vec2}
     keys = set(vec1.keys()) & set(vec2.keys())
     norm1 = sqrt(fsum([v * v for v in vec1.values()]))
     norm2 = sqrt(fsum([v * v for v in vec2.values()]))
