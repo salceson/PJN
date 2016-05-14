@@ -1,7 +1,7 @@
 # coding: utf-8
 import pickle
 import sys
-from heapq import nlargest
+from heapq import nlargest, nsmallest
 from operator import itemgetter
 from pprint import pprint
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
                 docs_similarities = [(i, cosine_metric(doc_projection, p))
                                      for i, p in enumerate(lsa_projections)
                                      if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
-                max_similarities = nlargest(10, docs_similarities, key=-itemgetter(1))
+                max_similarities = nsmallest(10, docs_similarities, key=itemgetter(1))
                 print('10 top similarities:')
                 print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
                 print()
@@ -154,7 +154,7 @@ if __name__ == '__main__':
                 docs_similarities = [(i, cosine_metric(doc_projection, p))
                                      for i, p in enumerate(lda_projections)
                                      if i != index and cosine_metric(doc_projection, p) < _SIMILAR_THRESHOLD]
-                max_similarities = nlargest(10, docs_similarities, key=-itemgetter(1))
+                max_similarities = nsmallest(10, docs_similarities, key=itemgetter(1))
                 print('10 top similarities:')
                 print(', '.join(['%d: %.2f' % (i, s * 100) for i, s in max_similarities]))
                 print()

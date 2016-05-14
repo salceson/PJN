@@ -12,3 +12,5 @@ i poprawianie błędów ortograficznych (prosty spell checker)
 * **Laboratorium 6** - prawo Zipfa i Mandelbrota - statystyki Potopu
 * **Laboratorium 7** - statystyki df, tf, tf-idf, wyszukiwanie na podstawie słów kluczowych, wyszukiwanie
 podobnych notatek dla korpusu PAP
+* **Laboratorium 8** - modele LSA i LDA tekstu, wyszukiwanie podobnych notatek dla korpusu PAP na podstawie
+modeli LSA i LDA
