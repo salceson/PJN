@@ -82,8 +82,8 @@ if __name__ == '__main__':
                 index = int(input('Enter note number (ctrl+d to end program): '))
                 doc_tf_idf = tfidf[index]
                 doc_projection = lsi_model[doc_tf_idf]
-                topics = [lsi_model.show_topic(x)
-                          for x, _ in nlargest(10, doc_projection, key=itemgetter(1))]
+                topics = [(lsi_model.show_topic(x), weight)
+                          for x, weight in nlargest(10, doc_projection, key=itemgetter(1))]
                 pprint(topics)
                 print()
             except (ValueError, KeyError):
@@ -102,8 +102,8 @@ if __name__ == '__main__':
                 index = int(input('Enter note number (ctrl+d to end program): '))
                 doc_tf_idf = tfidf[index]
                 doc_projection = lda_model[doc_tf_idf]
-                topics = [lda_model.show_topic(x)
-                          for x, _ in nlargest(10, doc_projection, key=itemgetter(1))]
+                topics = [(lda_model.show_topic(x), weight)
+                          for x, weight in nlargest(10, doc_projection, key=itemgetter(1))]
                 pprint(topics)
                 print()
             except (ValueError, KeyError):
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         with open('data/tf-idf.dat', 'rb') as f:
             tfidf = pickle.loads(f.read())
         print('Done')
-        print('Projecting tf-idf onto LDA...')
+        print('Projecting tf-idf onto LSA...')
         lsa_projections = lsa_model[tfidf]
         print('Done')
         while True:
