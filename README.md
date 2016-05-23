@@ -14,3 +14,4 @@ i poprawianie błędów ortograficznych (prosty spell checker)
 podobnych notatek dla korpusu PAP
 * **Laboratorium 8** - modele LSA i LDA tekstu, wyszukiwanie podobnych notatek dla korpusu PAP na podstawie
 modeli LSA i LDA
+* **Laboratorium 9** - model grafowy tekstu, wyszukiwanie podobnych notatek dla korpusu PAP
