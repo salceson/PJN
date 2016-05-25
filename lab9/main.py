@@ -11,7 +11,6 @@ __author__ = "Michał Ciołczyk"
 _DATA_FILE = 'data/pap.txt'
 _ENCODING = 'utf-8'
 _ACTIONS = ['preprocess', 'graph', 'notes', 'similar']
-_SIMILAR_THRESHOLD = 0.4
 
 
 def _usage(argv):
@@ -73,9 +72,7 @@ if __name__ == '__main__':
             try:
                 index = int(input('Enter note number (ctrl+d to end program): '))
                 note = graphs[index]
-                docs_similarities = [(i, g.get_metric(note))
-                                     for i, g in enumerate(graphs)
-                                     if i != index and g.get_metric(note) < _SIMILAR_THRESHOLD]
+                docs_similarities = [(i, g.get_metric(note)) for i, g in enumerate(graphs) if i != index]
                 max_similarities = nsmallest(10, docs_similarities, key=itemgetter(1))
                 print('10 most similar notes:')
                 print(', '.join(['%d: %.2f' % (i, s) for i, s in max_similarities]))
