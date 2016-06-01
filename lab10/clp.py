@@ -45,13 +45,13 @@ class GrammarCase(Enum):
         if single == GrammarCase.MIANOWNIK:
             return 'Mianownik'
         if single == GrammarCase.DOPELNIACZ:
-            return 'Dopelniacz'
+            return 'Dopełniacz'
         if single == GrammarCase.CELOWNIK:
             return 'Celownik'
         if single == GrammarCase.BIERNIK:
             return 'Biernik'
         if single == GrammarCase.NARZEDNIK:
-            return 'Narzednik'
+            return 'Narzędnik'
         if single == GrammarCase.MIEJSCOWNIK:
             return 'Miejscownik'
         if single == GrammarCase.WOLACZ:

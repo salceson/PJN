@@ -3,7 +3,6 @@ import codecs
 import pickle
 import re
 from collections import defaultdict
-from operator import itemgetter
 
 from clp import CLPDictionary, GrammarPartOfSpeech
 
@@ -13,6 +12,7 @@ _PAP_SPLITTER = re.compile('\n#[0-9]{6}\n')
 _SENTENCE_SPLITTER = re.compile('\. \n?(?=[A-ZĄĆĘŁÓŃŚŻŹ])')
 _NON_LETTERS = re.compile('[^a-ząćęłóńśżź]+')
 _CLP = CLPDictionary()
+_MAX_DISTANCE_FROM_PREPOSITION = 3
 
 
 def read_pap(filename, encoding='utf-8'):
@@ -53,7 +53,8 @@ def build_prepositions_map(texts, out_filename):
                     continue
                 continue_looking = True
                 next_word_idx = word_idx + 1
-                while continue_looking and next_word_idx < len(words):
+                while continue_looking and next_word_idx < len(words) \
+                        and (next_word_idx - word_idx) < _MAX_DISTANCE_FROM_PREPOSITION:
                     next_word = words[next_word_idx]
                     clp_next_words = filter(lambda w: w.pos is GrammarPartOfSpeech.RZECZOWNIK, _CLP.get(next_word))
                     for w in clp_next_words:
@@ -64,6 +65,3 @@ def build_prepositions_map(texts, out_filename):
     print('Done')
     with open(out_filename, 'wb') as f:
         f.write(pickle.dumps(prepositions_map))
-    print(prepositions_map.keys())
-    for prep in prepositions_map:
-        print('%s: %r' % (prep, list(map(itemgetter(0), prepositions_map[prep]))))

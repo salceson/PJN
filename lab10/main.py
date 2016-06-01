@@ -55,10 +55,10 @@ if __name__ == '__main__':
             case, value = cases_to_present[0]
             case_samples = samples_for_case(preposition, case)
             if float(value) / sum_cases_values * 100.0 > 80:
-                print('\t%s: %f%% (praktycznie jedyny kandydat) [Samples: %s]' %
+                print('\t%s: %f%% (praktycznie jedyny kandydat) [Przykłady: %s]' %
                       (case, float(value) / sum_cases_values * 100.0, case_samples))
             else:
                 for case, value in cases_to_present:
                     case_samples = samples_for_case(preposition, case)
-                    print('\t%s: %f%% [Samples: %s]'
+                    print('\t%s: %f%% [Przykłady: %s]'
                           % (case, float(value) / sum_cases_values * 100.0, case_samples))
