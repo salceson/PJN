@@ -61,6 +61,12 @@ class GrammarCase(Enum):
     def __repr__(self):
         return str(self)
 
+    def __eq__(self, other):
+        return isinstance(other, GrammarCase) and self.value == other.value
+
+    def __hash__(self):
+        return hash(self.value)
+
 
 class GrammarPartOfSpeech(Enum):
     UNKNOWN = 0

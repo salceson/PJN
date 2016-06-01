@@ -10,8 +10,12 @@ def prepositions_map_to_stats(prepositions_map):
     samples = defaultdict(lambda: defaultdict(list))
     for preposition, nouns in prepositions_map.items():
         for noun_orig, noun_clp in nouns:
-            cases = list(set(filter(lambda x: x not in [GrammarCase.MIANOWNIK, GrammarCase.WOLACZ],
-                                    noun_clp.grammar_case(noun_orig))))
+            grammar_cases = noun_clp.grammar_case(noun_orig)
+            if preposition == "kontra":
+                cases = list(set(filter(lambda x: x != GrammarCase.WOLACZ, grammar_cases)))
+            else:
+                cases = list(set(filter(lambda x: x not in [GrammarCase.MIANOWNIK, GrammarCase.WOLACZ],
+                                        grammar_cases)))
             if len(cases) > 2:
                 # Skip, this is too confusing word
                 continue
